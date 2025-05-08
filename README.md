@@ -10,9 +10,6 @@ Node Exporter устанавливается локально на целево�
 ===УСТАНОВКА С ПОМОЩЬЮ ANSIBLE===
 1. Заполнить inventory.ini:
 
-[servers]
-<HOST>
-
 2. Запустить playbook.yaml:
 
 ansible-playbook playbook.yaml -i inventory.ini
