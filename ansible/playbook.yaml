@@ -1,0 +1,6 @@
+- name: INSTALLATION PAVG STACK
+  hosts: servers
+  become: true
+
+  roles:
+    - pavg

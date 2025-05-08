@@ -1,0 +1,28 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for pavg
+- name: Copy script to remote host
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: /tmp/
+    mode: 0755
+  with_fileglob:
+    - "files/*.sh"
+
+- name: Run install Node Exporter
+  ansible.builtin.command: /tmp/node-exporter.sh
+
+- name: Run install Alertmanager
+  ansible.builtin.command: /tmp/alertmanager.sh
+ 
+- name: Run install Victoria Metrics
+  ansible.builtin.command: /tmp/victoria-metrics.sh
+
+- name: Run install Prometheus
+  ansible.builtin.command: /tmp/prometheus.sh
+
+- name: Run install Grafana
+  ansible.builtin.command: /tmp/grafana.sh
+
+   
+    
